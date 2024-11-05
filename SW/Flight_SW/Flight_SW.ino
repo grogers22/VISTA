@@ -12,7 +12,6 @@
 
 // Define constants which specify which pins we are using on our Arduino
 #define CS 10 // Chip Select on SD logger
-#define ledPin 9 // LED
 
 // Sensor Objects
 Adafruit_MS8607 ms8607; // Temp/Pressure sensor
@@ -67,7 +66,6 @@ void setup() {
   rtc.adjust(DateTime(F(__DATE__), F(__TIME__))); // Automatically set the real-time clock, when to resetting the time of your RTC make sure to remove its battery
   // rtc.adjust(DateTime(2014, 1, 21, 3, 0, 0)); // Manually set the real-time clock
 
-  pinMode(ledPin, OUTPUT); // Declare LED as an output pin
 }
 
 void loop() {
@@ -160,10 +158,4 @@ void loop() {
 
     Serial.println();
   }
-
-  // Flash LED to demonstrate that code is working properly
-  digitalWrite(ledPin, HIGH);
-  delay(1000);
-  digitalWrite(ledPin, LOW);
-  delay(1000);
 }
